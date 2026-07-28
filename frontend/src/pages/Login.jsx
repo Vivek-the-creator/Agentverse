@@ -35,7 +35,7 @@ export const Login = () => {
 
   const handleQuickLogin = (demoEmail) => {
     setEmail(demoEmail);
-    setPassword("demo123");
+    setPassword("password123");
   };
 
   return (

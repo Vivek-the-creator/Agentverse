@@ -13,7 +13,6 @@ router = APIRouter(
     tags=["Reports Management"]
 )
 
-@router.get("", response_model=List[schemas.ReportOut])
 @router.get("")
 def get_reports(
     search: Optional[str] = None,
@@ -27,7 +26,8 @@ def get_reports(
     ).filter(models.Case.user_id == current_user.id)
 
     if tag and tag != "All":
-        query = query.filter(models.Report.tags.contains(tag))
+        # JSON contains check — works for Postgres JSONB / JSON arrays
+        query = query.filter(models.Report.tags.contains([tag]))
 
     if search:
         query = query.filter(
@@ -36,7 +36,27 @@ def get_reports(
             models.Report.caseNumber.ilike(f"%{search}%")
         )
 
-    return query.order_by(models.Report.created_at.desc()).all()
+    reports = query.order_by(models.Report.created_at.desc()).all()
+
+    def _ser(r):
+        return {
+            "id": r.id,
+            "title": r.title,
+            "caseNumber": r.caseNumber,
+            "caseTitle": r.caseTitle,
+            "type": r.type,
+            "authorAgent": r.authorAgent,
+            "generatedDate": r.generatedDate,
+            "fileSize": r.fileSize,
+            "pages": r.pages,
+            "riskScore": r.riskScore,
+            "successProbability": r.successProbability,
+            "summary": r.summary,
+            "downloadUrl": r.downloadUrl,
+            "tags": r.tags or [],
+        }
+
+    return {"success": True, "data": [_ser(r) for r in reports]}
 
 @router.get("/download/{case_id}")
 def download_report(

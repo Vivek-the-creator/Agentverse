@@ -12,16 +12,21 @@ export const AuthProvider = ({ children }) => {
     const initAuth = async () => {
       try {
         const storedUser = localStorage.getItem("lexintel_user");
-        if (storedUser) {
+        const storedToken = localStorage.getItem("lexintel_token");
+
+        if (storedUser && storedToken) {
+          // Restore session from localStorage
           setUser(JSON.parse(storedUser));
         } else {
-          // Default mock login for demo
-          const res = await api.getCurrentUser();
-          setUser(res.data);
-          localStorage.setItem("lexintel_user", JSON.stringify(res.data));
+          // No session — user needs to log in. Don't auto-call the API.
+          setUser(null);
         }
       } catch (err) {
         console.error("Auth init error:", err);
+        // Clear corrupted storage
+        localStorage.removeItem("lexintel_user");
+        localStorage.removeItem("lexintel_token");
+        setUser(null);
       } finally {
         setLoading(false);
       }
@@ -84,7 +89,7 @@ export const AuthProvider = ({ children }) => {
         register,
         logout,
         updateUserProfile,
-        isAuthenticated: !!user
+        isAuthenticated: !!user && !!token
       }}
     >
       {children}

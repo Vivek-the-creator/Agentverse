@@ -15,8 +15,10 @@ export const CaseProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
-    // Load initial notifications
+    // Load initial notifications only when authenticated
     const fetchNotifs = async () => {
+      const token = localStorage.getItem("lexintel_token");
+      if (!token) return;
       try {
         const res = await api.getNotifications();
         if (res.success) {

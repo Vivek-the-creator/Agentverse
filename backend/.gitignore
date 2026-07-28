@@ -1,0 +1,73 @@
+# =============================================
+# LexIntel AI - Backend .gitignore
+# =============================================
+
+# --- Environment & Secrets (NEVER COMMIT) ---
+.env
+.env.local
+.env.production
+.env.staging
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+pip-wheel-metadata/
+.installed.cfg
+lib/
+lib64/
+.Python
+
+# --- Virtual Environments ---
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# --- Pytest / Testing ---
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- Uploads (user-uploaded case files) ---
+uploads/
+*.pdf
+*.mp4
+*.mp3
+*.m4a
+
+# --- Temporary Seeding / Extraction Files ---
+extractor.js
+users.json
+cases.json
+reports.json
+notifications.json
+
+# --- Logs ---
+*.log
+logs/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
