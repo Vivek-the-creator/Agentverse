@@ -1,0 +1,22 @@
+export const mockNotifications = [
+  { id: "notif_01", title: "Legal Notice Draft Ready", message: "AI Agent completed draft for Sharma vs. Apex Realty.", time: "10m ago", read: false, type: "success" },
+  { id: "notif_02", title: "Upcoming Hearing Alert", message: "Hearing for Case CS/2026/8941 scheduled for Aug 12 in MahaRERA.", time: "1h ago", read: false, type: "warning" },
+  { id: "notif_03", title: "Forensic Analysis Complete", message: "Section 65B Cyber Evidence report compiled for State vs Cyber Syndicate.", time: "2h ago", read: false, type: "info" },
+  { id: "notif_04", title: "High Risk Score Warning", message: "PMLA Fraud Investigation (FRD/2026/0099) risk score escalated to 78/100.", time: "3h ago", read: true, type: "danger" },
+  { id: "notif_05", title: "New Document Ingested", message: "Unboxing video evidence processed for Verma vs Global Tech Consumer complaint.", time: "4h ago", read: true, type: "info" },
+  { id: "notif_06", title: "Report Ready for Download", message: "18-Page RERA Section 18 Dossier is ready.", time: "5h ago", read: true, type: "success" },
+  { id: "notif_07", title: "Precedent Matched", message: "Supreme Court judgment Vineeta Sharma v Rakesh Sharma matched with 96% confidence.", time: "6h ago", read: true, type: "info" },
+  { id: "notif_08", title: "Settlement Probability Updated", message: "Settlement odds for Kulkarni vs NovaSoft increased to 65%.", time: "8h ago", read: true, type: "success" },
+  { id: "notif_09", title: "Document OCR Verified", message: "Agreement for Sale OCR scanned with 99.8% text accuracy.", time: "12h ago", read: true, type: "info" },
+  { id: "notif_10", title: "System Maintenance Scheduled", message: "AI Neural model weights upgrade scheduled for Aug 01 at 02:00 IST.", time: "1d ago", read: true, type: "warning" },
+  { id: "notif_11", title: "New Case Assigned", message: "Property dispute Desai vs. Mehta assigned to Adv. Rajesh Sharma.", time: "1d ago", read: true, type: "info" },
+  { id: "notif_12", title: "Disability Award Decreed", message: "MACT Court awarded INR 35 Lakh compensation in Subramanian case.", time: "2d ago", read: true, type: "success" },
+  { id: "notif_13", title: "Insurance Repudiation Rebuttal", message: "Marine insurance policy surveyor audit report uploaded.", time: "2d ago", read: true, type: "info" },
+  { id: "notif_14", title: "Non-Compete Clause Invalidated", message: "Section 27 Contract Act memo compiled for Pune Labor Court.", time: "3d ago", read: true, type: "success" },
+  { id: "notif_15", title: "High Court Injunction Order", message: "Section 9 Urgent stay granted on Bank Guarantee encashment.", time: "3d ago", read: true, type: "success" },
+  { id: "notif_16", title: "Deepfake Detection Alert", message: "AI Spectrogram identified synthetic voice pattern in audio evidence.", time: "4d ago", read: true, type: "danger" },
+  { id: "notif_17", title: "Emergency Custody Application", message: "Restraining order application filed in Bengaluru Family Court.", time: "5d ago", read: true, type: "warning" },
+  { id: "notif_18", title: "Consent Decree Signed", message: "Vanguard Tech vs Horizon Telecom settled for INR 12.8 Crores.", time: "5d ago", read: true, type: "success" },
+  { id: "notif_19", title: "Spurious Drug Raid Confirmed", message: "Central Drug Lab confirmed 0% API in seized oncology samples.", time: "6d ago", read: true, type: "danger" },
+  { id: "notif_20", title: "Welcome to LexIntel AI", message: "Your Multi-Agent Smart Court platform is active and ready for legal processing.", time: "7d ago", read: true, type: "info" }
+];
